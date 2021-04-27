@@ -4,9 +4,23 @@ import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import AddIcon from '@material-ui/icons/Add';
 import { sidebarItems } from '../data/sidebar-data';
 import { Channels } from '../data/sidebar-data';
+import db from '../firebase';
+import swal from 'sweetalert';
 
 //prop meaning properties, to access the code done in app.js about the channels
 function Sidebar(props) {
+        //code for sweet alert prompt (Not from Slack clone process, my own idea, very cool)
+        const promptName = () => {
+            swal("Channel Name:", { 
+                content: "input", 
+            })
+            .then((value) => {
+                db.collection('rooms').add({
+                    name: `${value}`
+                })
+            });
+        }
+
     return (
         <Container>
             <WorkspaceContainer>
@@ -37,7 +51,7 @@ function Sidebar(props) {
                         Channels
                     </div>
                     <IconStyle>
-                        <AddIcon />
+                        <AddIcon onClick={promptName} />
                     </IconStyle>
                 </NewChannelContainer>
                 {
