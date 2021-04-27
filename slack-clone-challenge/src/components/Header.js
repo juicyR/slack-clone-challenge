@@ -18,7 +18,7 @@ function header() {
             <UserContainer>
                 <Name>Reggie Matovu</Name>
                 <UserImg>
-                    <img src="https://i.imgur.com/6VBx3io.png" />
+                    <img src="https://i.imgur.com/6VBx3io.png" alt="Profile" />
                 </UserImg>
             </UserContainer>
         </Container>
