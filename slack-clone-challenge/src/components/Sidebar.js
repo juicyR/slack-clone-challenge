@@ -5,6 +5,7 @@ import AddIcon from '@material-ui/icons/Add';
 import { sidebarItems } from '../data/sidebar-data';
 import { Channels } from '../data/sidebar-data';
 
+//prop meaning properties, to access the code done in app.js about the channels
 function Sidebar(props) {
     return (
         <Container>
@@ -21,6 +22,7 @@ function Sidebar(props) {
 
             <MainChannels>
                 {
+                    //this information is set from the constant sidebar-data.js code, that will never change
                     sidebarItems.map(item => (
                         <MainChannelItem>
                             {item.icon}
@@ -39,9 +41,11 @@ function Sidebar(props) {
                     </IconStyle>
                 </NewChannelContainer>
                 {
+                    //map function is like switch statement, it goes through everything in the database, until it finds the specific thing its looking for
                     Channels.map(item => (
                     <ChannelList>
                             {
+                                //this is to access the channel names, which are the items, from firebase, using the code made in app.js
                                 props.rooms.map(item => (
                                     <Channel>
                                         # {item.name}

@@ -9,17 +9,20 @@ import Header from './components/Header';
 import Sidebar from "./components/Sidebar";
 import db from "./firebase"
 
+//function to get data from firebase
 function App() {
-
+  //function to access rooms from the collections created in firebase
   const [rooms, setRooms] = useState([]);
-
+  //function created to obtain channels from firebase, specifically the rooms
   const getChannels = () => {
     db.collection('rooms').onSnapshot((snapshot) => {
       setRooms(snapshot.docs.map((doc) => {
+        //This is to ask for specific information from the database
         return { id: doc.id, name: doc.data().name }
       }))
     })
   }
+  //useEffect function added so that the function is run only once on page load
  useEffect(() => {
   getChannels();
  }, [])
