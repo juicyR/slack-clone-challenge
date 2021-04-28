@@ -9,10 +9,18 @@ import swal from 'sweetalert';
 
 //prop meaning properties, to access the code done in app.js about the channels
 function Sidebar(props) {
-        //code for sweet alert prompt (Not from Slack clone process, my own idea, very cool)
+        //code for sweet alert prompt (Not from Slack clone video, but still very cool)
         const promptName = () => {
-            swal("Channel Name:", { 
-                content: "input", 
+            // swal("Channel Name:", { 
+            //     content: "input", 
+            // })
+            swal({
+                text: "Create A Channel",
+                content: "input",
+                buttons: {
+                  cancel: "Close",
+                  confirm: "That's Good Enough",
+                }
             })
             .then((value) => {
                 db.collection('rooms').add({
