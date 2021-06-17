@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+//import StyleHeader from '../components/header.css';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+//import ReactDOM from 'react-dom';
 
 function header() {
     return (
@@ -10,7 +12,8 @@ function header() {
                 <AccessTimeIcon />
                 <SearchContainer>
                     <SearchBox>
-                        <input type="text" id="text-input" placeholder="Search CleverProgrammer..." />
+                        <input type="text" class="search-box" id="text-input" placeholder="Search CleverProgrammer..." />
+                        {/* <label for="text-input">Search</label> */}
                     </SearchBox>
                 </SearchContainer>
                 <HelpOutlineIcon />
@@ -49,16 +52,15 @@ const SearchContainer = styled.div`
 const SearchBox = styled.div`
     width: 100%;
     box-shadow: inset 0 0 0 1px rgb(104 74 104);
-    border-style: solid;
-    border-width: .0004cm;
     border-radius: 4px;
-    border-color: #c2c2c2;
+    // border-color: #c2c2c2;
     display: flex;
+    overflow: hidden;
     align-items: center;
     background-color: rgba(82, 0, 117, 0.8);
 
-    :hover{
-        border-color: #ffffff;
+    input:focus {
+        outline: none;
     }
 
     input {
@@ -69,15 +71,13 @@ const SearchBox = styled.div`
         color: white;
     }
 
-    input:focus {
-        outline: none;
-    }
     #text-input::placeholder {
         color: #c4c4c4;
+        transition: .25s ease-in;
     }
-    // #text-input:hover::placeholder {
-    //     color: #ffffff;
-    // }
+    #text-input:hover::placeholder {
+        color: #d9d9d9;
+    }
 `
 const UserContainer = styled.div`
     display: flex;
@@ -93,12 +93,15 @@ const Name = styled.div`
 const UserImg = styled.div`
     width: 32px;
     height: 32px;
-    border: 2px solid;
-    border-radius: 30%;
+    // border: 2px solid;
+    border-radius: 15%;
     cursor: pointer;
+    overflow: hidden;
 
     img {
         width: 100%;
-        border-radius: 30%
     }
 `
+
+//CSS Chatbox styling
+//ReactDOM.render(<StyleHeader />, document.getElementById('text-input'));

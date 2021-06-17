@@ -19,7 +19,7 @@ function Sidebar(props) {
                 content: "input",
                 buttons: {
                   cancel: "Close",
-                  confirm: "That's Good Enough",
+                  confirm: "Confirm",
                 }
             })
             .then((value) => {
