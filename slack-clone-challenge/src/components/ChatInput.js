@@ -9,7 +9,7 @@ function ChatInput() {
                 <form>
                     <input type="text" placeholder="Type Message Here..." />
                     <SendButton>
-                        <SendIcon />
+                        <Send />
                     </SendButton>
                 </form>
             </InputContainer>
@@ -26,25 +26,47 @@ const Container = styled.div`
 const InputContainer = styled.div`
     border: 1px solid #8d8d8e;
     border-radius: 4px;
-    padding: 0.5em;
 
     form {
         height: 42px;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-    }
+        padding-left: 10px;
 
-    input {
-        width: 100%;
-        border: none;
-    }
-
-    input:focus {
-        outline: none;
+        input {
+            flex: 1;
+            border: none;
+            font-size: 13px;
+        }
+    
+        input:focus {
+            outline: none;
+        }
     }
 `
 
 const SendButton = styled.div`
-    margin-left: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #007a5a;
+    width: 32px;
+    height: 32px;
+    border-radius: 2px;
+    margin: 0px 5px 0px 10px;
+    cursor: pointer;
+    transition: .1s ease-in;
+
+    .MuiSvgIcon-root {
+        width: 18px;
+    }
+
+    :hover {
+        background: #148567;
+    }
+
+`
+
+const Send = styled(SendIcon)`
+    color: #ffffff;
 `
