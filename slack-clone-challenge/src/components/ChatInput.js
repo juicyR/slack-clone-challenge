@@ -25,59 +25,82 @@ function ChatInput() {
                 </form>
                 <TextEdit>
                     <Icons>
-                        <IconOneContainer>
-                            <IconOne/>
-                        </IconOneContainer>
 
-                        <IconTwoContainer>
-                            <IconTwo />
-                        </IconTwoContainer>
+                        <Tooltip title="LOL 😂 These don't work. Don't bother, they're just for show.">
+                            <IconOneContainer>
+                                <IconOne/>
+                            </IconOneContainer>
+                        </Tooltip>
 
-                        <IconThreeContainer>
-                            <IconThree />
-                        </IconThreeContainer>
+                        <Tooltip title="LOL 😂 These don't work. Don't bother, they're just for show.">
+                            <IconTwoContainer>
+                                <IconTwo />
+                            </IconTwoContainer>
+                        </Tooltip>
 
-                        <CodeIconContainer>
-                            <CodeIcone />
-                        </CodeIconContainer>
+                        <Tooltip title="LOL 😂 These don't work. Don't bother, they're just for show.">
+                            <IconThreeContainer>
+                                <IconThree />
+                            </IconThreeContainer>
+                        </Tooltip>
 
-                        <LinkIconContainer>
-                            <LinkIcone />
-                        </LinkIconContainer>
+                        <Tooltip title="LOL 😂 These don't work. Don't bother, they're just for show.">
+                            <CodeIconContainer>
+                                <CodeIcone />
+                            </CodeIconContainer>
+                        </Tooltip>
 
-                        <OrderedList>
-                            <FormatListNumberedIcone />
-                        </OrderedList>
+                        <Tooltip title="LOL 😂 These don't work. Don't bother, they're just for show.">
+                            <LinkIconContainer>
+                                <LinkIcone />
+                            </LinkIconContainer>
+                        </Tooltip>
 
-                        <UnorderedList>
-                            <FormatListBulletedIcone />
-                        </UnorderedList>
+                        <Tooltip title="LOL 😂 These don't work. Don't bother, they're just for show.">
+                            <OrderedList>
+                                <FormatListNumberedIcone />
+                            </OrderedList>
+                        </Tooltip>
 
-                        <BlockQuote>
-                            <SubjectIcone />
-                        </BlockQuote>
+                        <Tooltip title="LOL 😂 These don't work. Don't bother, they're just for show.">
+                            <UnorderedList>
+                                <FormatListBulletedIcone />
+                            </UnorderedList>
+                        </Tooltip>
+
+                        <Tooltip title="LOL 😂 These don't work. Don't bother, they're just for show.">
+                            <BlockQuote>
+                                <SubjectIcone />
+                            </BlockQuote>
+                        </Tooltip>
                     </Icons>
 
 
 
                     <IconsTwo>
-                        <TextButton>
-                            <FormatSizeIcone />
-                        </TextButton>
+                        <Tooltip title="LOL 😂 These don't work. Don't bother, they're just for show.">
+                            <TextButton>
+                                <FormatSizeIcone />
+                            </TextButton>
+                        </Tooltip>
 
-                        <AtButton>
-                            <AlternateEmailIcone />
-                        </AtButton>
+                        <Tooltip title="LOL 😂 These don't work. Don't bother, they're just for show.">
+                            <AtButton>
+                                <AlternateEmailIcone />
+                            </AtButton>
+                        </Tooltip>
 
-                        <Tooltip title="Hold the Windows key down and press either the period (.) or semicolon (;) key to use emoji in any app < ">
+                        <Tooltip title="Hold the Windows key down and press either the period (.) or semicolon (;) key to use emoji in any app.">
                             <IconFourContainer>
                                 <IconFour />
                             </IconFourContainer>
                         </Tooltip>
 
-                        <AttachButton>
-                            <AttachFileIcone />
-                        </AttachButton>
+                        <Tooltip title="LOL 😂 These don't work. Don't bother, they're just for show.">
+                            <AttachButton>
+                                <AttachFileIcone />
+                            </AttachButton>
+                        </Tooltip>
 
                         <SendButton>
                             <Send />
