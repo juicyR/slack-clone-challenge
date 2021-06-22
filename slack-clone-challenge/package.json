@@ -12,6 +12,7 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.1",
+    "@tinymce/tinymce-react": "^3.12.6",
     "firebase": "^8.4.2",
     "firebase-tools": "^9.10.0",
     "react": "^17.0.1",

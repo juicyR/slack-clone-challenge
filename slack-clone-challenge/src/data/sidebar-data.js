@@ -1,3 +1,4 @@
+import React from 'react';
 import MessageIcon from '@material-ui/icons/Message';
 import InboxIcon from '@material-ui/icons/Inbox';
 import DraftsIcon from '@material-ui/icons/Drafts';

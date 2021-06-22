@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import ChatInput from '../components/ChatInput';
+import ChatMessage from '../components/ChatMessage';
 
 function chat() {
     return (
@@ -23,7 +24,7 @@ function chat() {
                 </ChannelDetails>
             </Header>
             <MessageContainer>
-
+                <ChatMessage />
             </MessageContainer>
             <ChatInput />
         </Container>
@@ -35,6 +36,9 @@ export default chat
 const Container = styled.div`
     display: grid;
     grid-template-rows: 64px auto min-content;
+    background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700320362.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 `
 
 const Header = styled.div`
@@ -43,6 +47,7 @@ const Header = styled.div`
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(83, 39, 83, 0.13);
+    background: rgba(237, 237, 237, 0.7);
 `
 
 const Channel = styled.div`
@@ -63,6 +68,10 @@ const ChannelInfo = styled.div`
 
 const Info = styled(InfoOutlinedIcon)`
     margin-left: 10px;
+
+    :hover {
+        cursor: pointer;
+    }
 `
 
 const ChannelDetails = styled.div`
