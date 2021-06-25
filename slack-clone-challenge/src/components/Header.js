@@ -1,27 +1,27 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 //import StyleHeader from '../components/header.css';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 //import ReactDOM from 'react-dom';
 
-function header() {
+function header({ user, signOut }) {
     return (
         <Container>
             <Main>
-                <AccessTimeIcon />
+                <AccessTimeIcone />
                 <SearchContainer>
                     <SearchBox>
                         <input type="text" class="search-box" id="text-input" placeholder="Search CleverProgrammer..." />
                         {/* <label for="text-input">Search</label> */}
                     </SearchBox>
                 </SearchContainer>
-                <HelpOutlineIcon />
+                <HelpOutlineIcone />
             </Main>
-            <UserContainer>
-                <Name>Reggie Matovu</Name>
+            <UserContainer onClick={signOut}>
+                <Name>{user.name ? user.name : "Mr. Nobody"}</Name>
                 <UserImg>
-                    <img src="https://i.imgur.com/6VBx3io.png" alt="Profile" />
+                    <img src = {user.photo ? user.photo : "https://i.imgur.com/6VBx3io.png"} alt="user-img"/>
                 </UserImg>
             </UserContainer>
         </Container>
@@ -36,17 +36,18 @@ const Container = styled.div`
     background: #350d46;
     color: white;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     z-index: 10;
     box-shadow: 0px 1px 0px 0px rbg(255 255 255 / 10%);
+    padding-left: 16px;
 `
 const Main = styled.div`
     display: flex;
-    margin: 0 16px 0 16px;
     position: relative;
+    padding-left: 202px;
 `
 const SearchContainer = styled.div`
-    min-width: 400px;
+    min-width: 700px;
     margin: 0 16px 0 16px
 `
 const SearchBox = styled.div`
@@ -100,6 +101,18 @@ const UserImg = styled.div`
 
     img {
         width: 100%;
+    }
+`
+
+const AccessTimeIcone = styled(AccessTimeIcon)`
+    :hover {
+        cursor: pointer;
+    }
+`
+
+const HelpOutlineIcone = styled(HelpOutlineIcon)`
+    :hover {
+        cursor: pointer;
     }
 `
 

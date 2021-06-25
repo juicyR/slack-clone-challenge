@@ -6,10 +6,21 @@ import { sidebarItems } from '../data/sidebar-data';
 import { Channels } from '../data/sidebar-data';
 import db from '../firebase';
 import swal from 'sweetalert';
+import { useHistory } from 'react-router-dom';
 
 //prop meaning properties, to access the code done in app.js about the channels
 function Sidebar(props) {
         //code for sweet alert prompt (Not from Slack clone video, but still very cool)
+
+        const history = useHistory();
+
+        const goToChannel = (id) => {
+            if(id){
+                console.log(id);
+                history.push(`/room/${id}`)
+            }
+        }
+
         const promptName = () => {
             // swal("Channel Name:", { 
             //     content: "input", 
@@ -69,7 +80,7 @@ function Sidebar(props) {
                             {
                                 //this is to access the channel names, which are the items, from firebase, using the code made in app.js
                                 props.rooms.map(item => (
-                                    <Channel>
+                                    <Channel onClick={()=>goToChannel(item.id)}>
                                         # {item.name}
                                     </Channel>
                                 ))

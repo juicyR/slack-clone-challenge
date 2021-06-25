@@ -1,16 +1,34 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import ChatInput from '../components/ChatInput';
 import ChatMessage from '../components/ChatMessage';
+import db from '../firebase';
+import { useParams } from 'react-router-dom';
 
 function chat() {
+
+    let { channelId } = useParams();
+    const [ channel , setChannel ] = useState();
+
+    const getChannel = () => {
+        db.collection('rooms')
+        .doc(channelId)
+        .onSnapshot((snapshot)=>{
+            setChannel(snapshot.data());
+        })
+    }
+
+    useEffect(()=>{
+        getChannel();
+    }, [channelId])
+
     return (
         <Container>
             <Header>
                 <Channel>
                     <ChannelName>
-                        # programming-is-amazing
+                        # {channel.name}
                     </ChannelName>
                     <ChannelInfo>
                         Code is great, and if you can express that in code, you are great as well.

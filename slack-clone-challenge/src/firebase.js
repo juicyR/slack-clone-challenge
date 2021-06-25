@@ -15,4 +15,9 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 //this function is made so other files can access firestore
 const db = firebaseApp.firestore();
 //this is to let all files in the slack-clone challenge project to be able to access firebase
+
+const auth = firebase.auth();
+
+const provider = new firebase.auth.GoogleAuthProvider();
+export { auth, provider };
 export default db;
