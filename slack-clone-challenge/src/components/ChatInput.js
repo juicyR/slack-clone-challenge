@@ -124,7 +124,7 @@ function ChatInput({ sendMessage }) {
 export default ChatInput
 
 const Container = styled.div`
-    padding: 0px 20px 24px 20px;
+    padding: 10px 20px 24px 20px;
 `
 
 const InputContainer = styled.div`
