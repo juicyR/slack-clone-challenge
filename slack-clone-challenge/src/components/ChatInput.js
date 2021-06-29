@@ -15,27 +15,22 @@ import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 import SentimentSatisfiedOutlinedIcon from '@material-ui/icons/SentimentSatisfiedOutlined';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
 
-function ChatInput({sendMessage}) {
+function ChatInput({ sendMessage }) {
 
     const [input, setInput] = useState("");
 
     const send = (e) => {
-        e.preventDefault();
         if(!input) return;
-        sendMessage(input)
-        setInput("")
+        sendMessage(input);
+        setInput("");
+        e.stopPropagation();
     }
 
     return (
         <Container>
             <InputContainer>
                 <form>
-                    <input
-                        onChange={(e)=>setInput(e.target.value)}
-                        type="text" 
-                        value={input}
-                        placeholder="Type Message Here..." 
-                    />
+                    <input onChange={(e)=>setInput(e.target.value)} type="text" value={input} placeholder="Type Message Here..." />
                 </form>
                 <TextEdit>
                     <Icons>
@@ -116,9 +111,7 @@ function ChatInput({sendMessage}) {
                             </AttachButton>
                         </Tooltip>
 
-                        <SendButton
-                            type="submit"
-                            onClick={send}>
+                        <SendButton type="submit" onClick={send}>
                             <Send />
                         </SendButton>
                     </IconsTwo>
