@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Tooltip } from '@material-ui/core';
 import styled from 'styled-components';
 import SendIcon from '@material-ui/icons/Send';
@@ -15,13 +15,27 @@ import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 import SentimentSatisfiedOutlinedIcon from '@material-ui/icons/SentimentSatisfiedOutlined';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
 
-function ChatInput() {
+function ChatInput({sendMessage}) {
+
+    const [input, setInput] = useState("");
+
+    const send = (e) => {
+        e.preventDefault();
+        if(!input) return;
+        sendMessage(input)
+        setInput("")
+    }
 
     return (
         <Container>
             <InputContainer>
                 <form>
-                    <input type="text" placeholder="Type Message Here..." />
+                    <input
+                        onChange={(e)=>setInput(e.target.value)}
+                        type="text" 
+                        value={input}
+                        placeholder="Type Message Here..." 
+                    />
                 </form>
                 <TextEdit>
                     <Icons>
@@ -102,7 +116,9 @@ function ChatInput() {
                             </AttachButton>
                         </Tooltip>
 
-                        <SendButton>
+                        <SendButton
+                            type="submit"
+                            onClick={send}>
                             <Send />
                         </SendButton>
                     </IconsTwo>
@@ -147,7 +163,7 @@ const InputContainer = styled.div`
     }
 `
 
-const SendButton = styled.div`
+const SendButton = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -157,6 +173,7 @@ const SendButton = styled.div`
     border-radius: 4px;
     cursor: pointer;
     transition: .1s ease-in;
+    border: none;
 
     .MuiSvgIcon-root {
         width: 18px;

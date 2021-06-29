@@ -1,19 +1,19 @@
 import React from 'react'
 import styled from 'styled-components';
 
-function ChatMessage() {
+function ChatMessage({ text, name, image, timestamp }) {
     return (
         <Container>
             <UserAvatar>
-                <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="profile_picture" />
+                <img src={image} alt="profile_picture" />
             </UserAvatar>
             <MessageContent>
                 <Name>
-                    Roberto Clark
-                    <span>18/06/2021 13:31:10 PM</span>
+                    {name}
+                    <span>{new Date(timestamp.toDate()).toUTCString()}</span>
                 </Name>
                 <Text>
-                    Have you completed the slack clone, we need to move to more serious things!
+                    {text}
                 </Text>
             </MessageContent>
         </Container>
@@ -35,7 +35,7 @@ const Container = styled.div`
 const UserAvatar = styled.div`
     width: 36px;
     height: 36px;
-    border-radius: 2px;
+    border-radius: 6px;
     overflow: hidden;
     margin-right: 10px;
 
