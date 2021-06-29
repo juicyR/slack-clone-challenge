@@ -1,3 +1,22 @@
+# You can find the web app HERE
+(https://slack-clone-challenge-77fff.web.app)
+
+# A few errors such include:
+# Image becoming smaller when long message
+# Icon in tab area disapears when channels are clicked
+# Enter key when sending message simply reloads the page
+# Bottom editing section in chat input, buttons have no use
+# When entering a channel, page loads from top of the texts, not from the recent ones.
+# Scroll bar is too basic, and can be improved.
+# Long text messages just keep going, and it doesn't break in the input area
+# Add other login options
+# Other areas such as threads, all DMS etc, must also be implemented
+# Search bar implementation
+# Adding other workspaces
+# Unused icons such as deatilIcon, clockIcon in the search area and moreInfo icon also in search area
+
+# You may come back to this, when you are now too good, when you have advanced highly in robotics, and programming in general, and later on web dev. Come back to this when you are a MASTER!!!!
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
