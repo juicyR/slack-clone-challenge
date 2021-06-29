@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { auth, provider } from '../firebase';
 
-function login(props) {
+function Login(props) {
 
     const signIn = () => {
         auth.signInWithPopup(provider)
@@ -30,7 +30,7 @@ function login(props) {
     )
 }
 
-export default login
+export default Login
 
 const Container = styled.div`
     width: 100%;

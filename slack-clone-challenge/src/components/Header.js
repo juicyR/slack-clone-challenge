@@ -36,18 +36,16 @@ const Container = styled.div`
     background: #350d46;
     color: white;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
     z-index: 10;
     box-shadow: 0px 1px 0px 0px rbg(255 255 255 / 10%);
-    padding-left: 16px;
 `
 const Main = styled.div`
     display: flex;
     position: relative;
-    padding-left: 202px;
 `
 const SearchContainer = styled.div`
-    min-width: 700px;
+    min-width: 500px;
     margin: 0 16px 0 16px
 `
 const SearchBox = styled.div`

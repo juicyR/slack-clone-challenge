@@ -9,7 +9,20 @@ import { useParams } from 'react-router-dom';
 function chat() {
 
     let { channelId } = useParams();
-    const [ channel , setChannel ] = useState();
+    const [ channel , setChannel ] = useState([]);
+    const [messages, setMessages] = useState([])
+
+    const getMessage = () => {
+        db.collection('rooms')
+        .doc(channelId)
+        .collection('messages')
+        orderBy('timestamp', 'asc')
+        onSnapshot((snapshot)=>{
+            let messages = snapshot.docs.map((doc)=>doc.data());
+            console.log(messages);
+            setMessages(messages);
+        })
+    }
 
     const getChannel = () => {
         db.collection('rooms')
@@ -21,6 +34,7 @@ function chat() {
 
     useEffect(()=>{
         getChannel();
+        getMessages();
     }, [channelId])
 
     return (

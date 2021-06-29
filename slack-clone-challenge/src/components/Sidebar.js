@@ -7,6 +7,7 @@ import { Channels } from '../data/sidebar-data';
 import db from '../firebase';
 import swal from 'sweetalert';
 import { useHistory } from 'react-router-dom';
+import { Tooltip } from '@material-ui/core';
 
 //prop meaning properties, to access the code done in app.js about the channels
 function Sidebar(props) {
@@ -48,9 +49,11 @@ function Sidebar(props) {
                         CleverProgrammer
                     </Name>
                 </b>
-                <NewMessage>
-                    <AddCircleOutlineIcon />
-                </NewMessage>
+                <Tooltip title="New Message">
+                    <NewMessage>
+                        <AddCircleOutlineIcon />
+                    </NewMessage>
+                </Tooltip>
             </WorkspaceContainer>
 
             <MainChannels>
@@ -123,11 +126,6 @@ const NewMessage = styled.div`
     align-items: center;
     cursor: pointer;
     transition: .5s all;
-
-    :hover {
-        width: 38px;
-        height: 38px;
-    }
 `
 const MainChannels = styled.div`
     padding: 15px 0 0 0;

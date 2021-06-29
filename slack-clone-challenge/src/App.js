@@ -8,7 +8,8 @@ import Login from "./components/Login";
 import styled from 'styled-components';
 import Header from './components/Header';
 import Sidebar from "./components/Sidebar";
-import db from "./firebase"
+import db from "./firebase";
+import QueueIcon from '@material-ui/icons/Queue';
 import { auth, provider } from "./firebase";
 
 //function to get data from firebase
@@ -54,7 +55,12 @@ function App() {
                   <Chat />
                 </Route>
                 <Route path="/">
-                  Select or Create Channel
+                  <RootPath>
+                    <Text>
+                      Select or Create Channel
+                    </Text>
+                    <QueueIcon />
+                  </RootPath>
                 </Route>
               </Switch>
             </Main>
@@ -77,4 +83,19 @@ const Container = styled.div`
 const Main = styled.div`
   display: grid;
   grid-template-columns: 260px auto;
+`
+
+const RootPath = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700320362.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+`
+
+const Text = styled.div`
+  margin-right: 10px;
 `
