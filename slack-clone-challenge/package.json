@@ -13,6 +13,7 @@
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.1",
     "@tinymce/tinymce-react": "^3.12.6",
+    "autoprefixer": "^7.1.6",
     "firebase": "^8.4.2",
     "firebase-tools": "^9.10.0",
     "react": "^17.0.1",
@@ -40,7 +41,6 @@
   "browserslist": {
     "production": [
       ">0.2%",
-      "not dead",
       "not op_mini all"
     ],
     "development": [
